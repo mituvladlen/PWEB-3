@@ -236,6 +236,21 @@
         document.getElementById('hamburger').classList.remove('active');
         document.getElementById('mobile-overlay').classList.remove('active');
       }
+
+      // Show mascot after delay
+      setTimeout(() => {
+        document.getElementById('mascot').classList.add('mascot--visible');
+      }, 3000);
     </script>
+
+    <!-- Mascot -->
+    <div class="mascot" id="mascot" role="img" aria-label="MediaGrowth mascot">
+      <div class="mascot__bubble">
+        <p>👋 Hey! Ready to <strong>grow your reach</strong>?</p>
+        <p>We pay clippers per 1,000 views — zero ad spend.</p>
+        <a href="#contact">Start your campaign →</a>
+      </div>
+      <img src="images/mediagrowth.png" alt="MediaGrowth Mascot" class="mascot__img" />
+    </div>
   </body>
 </html>
