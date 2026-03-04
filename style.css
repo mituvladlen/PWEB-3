@@ -449,6 +449,12 @@ section {
   background-color: #052a9e;
 }
 
+/* CTA pulse animation for mobile attention */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(245, 217, 32, 0.3); }
+  50%       { box-shadow: 0 4px 32px rgba(245, 217, 32, 0.75); transform: translateY(-2px); }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .benefits-grid {
@@ -543,6 +549,23 @@ section {
 
   .mobile-sticky-cta {
     display: block;
+  }
+
+  /* CTA buttons: full-width & pulsing on mobile */
+  .cta-button-large {
+    display: block;
+    width: 100%;
+    text-align: center;
+    animation: cta-pulse 2.4s ease-in-out infinite;
+  }
+
+  .contact .cta-button-large {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .mobile-sticky-cta a {
+    animation: cta-pulse 2.4s ease-in-out infinite;
   }
 
   /* extra bottom padding so content isn't hidden behind sticky CTA */
