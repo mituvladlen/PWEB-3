@@ -16,15 +16,19 @@
           <a href="#" class="logo">
             <img src="images/mediagrowth.png" alt="MediaGrowth Logo" />
           </a>
-          <ul class="nav-links">
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#testimonials">Results</a></li>
-            <li><a href="#contact" class="cta-button">Contact Us</a></li>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#how-it-works" onclick="closeMenu()">How It Works</a></li>
+            <li><a href="#benefits" onclick="closeMenu()">Benefits</a></li>
+            <li><a href="#testimonials" onclick="closeMenu()">Results</a></li>
+            <li><a href="#contact" class="cta-button" onclick="closeMenu()">Contact Us</a></li>
           </ul>
+          <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </nav>
+    <div class="mobile-menu-overlay" id="mobile-overlay" onclick="closeMenu()"></div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -37,6 +41,20 @@
             Pay only for results. Grow your reach exponentially.
           </p>
           <a href="#contact" class="cta-button-large">Start Your Campaign</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile-Only: On-the-Go Banner -->
+    <section class="mobile-only-banner">
+      <div class="container">
+        <div class="mobile-only-content">
+          <span class="mobile-only-icon">📲</span>
+          <div>
+            <h3>Manage Your Campaigns On the Go</h3>
+            <p>Track views, clippers, and earnings — right from your phone.</p>
+          </div>
+          <a href="#contact" class="cta-button">Start Now</a>
         </div>
       </div>
     </section>
@@ -156,6 +174,11 @@
       </div>
     </footer>
 
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+      <a href="#contact">🚀 Start Your Campaign</a>
+    </div>
+
     <script>
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -170,6 +193,22 @@
           }
         });
       });
+
+      // Hamburger menu toggle
+      function toggleMenu() {
+        const nav = document.getElementById('nav-links');
+        const hamburger = document.getElementById('hamburger');
+        const overlay = document.getElementById('mobile-overlay');
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+      }
+
+      function closeMenu() {
+        document.getElementById('nav-links').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('mobile-overlay').classList.remove('active');
+      }
     </script>
   </body>
 </html>
